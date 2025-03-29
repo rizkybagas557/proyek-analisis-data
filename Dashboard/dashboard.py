@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Membaca data gabungan
-all_df = pd.read_csv("all_data.csv")
+all_df = pd.read_csv("E:/OneDrive - Universitas Diponegoro/Programming Code/Proyek/proyek analisis data/Dashboard/all_data.csv")
 
 # Sidebar untuk memilih stasiun
 st.sidebar.title("Filter Data")
@@ -56,13 +56,21 @@ time_filter = st.selectbox("Pilih Analisis Waktu:", ["Year", "Month", "Day", "Ho
 
 # Agregasi data berdasarkan waktu
 if time_filter == "Year":
-    time_data = filtered_data.groupby("year")[["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]].mean()
+    time_data = filtered_data.groupby("year")[
+        ["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]
+    ].mean()
 elif time_filter == "Month":
-    time_data = filtered_data.groupby("month")[["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]].mean()
+    time_data = filtered_data.groupby("month")[
+        ["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]
+    ].mean()
 elif time_filter == "Day":
-    time_data = filtered_data.groupby("day")[["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]].mean()
+    time_data = filtered_data.groupby("day")[
+        ["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]
+    ].mean()
 elif time_filter == "Hour":
-    time_data = filtered_data.groupby("hour")[["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]].mean()
+    time_data = filtered_data.groupby("hour")[
+        ["PM2.5", "PM10", "SO2", "NO2", "CO", "O3"]
+    ].mean()
 
 # Visualisasi data berdasarkan waktu
 st.line_chart(time_data)
