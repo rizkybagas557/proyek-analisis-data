@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Membaca data gabungan
-all_df = pd.read_csv("E:/OneDrive - Universitas Diponegoro/Programming Code/Proyek/proyek analisis data/Dashboard/all_data.csv")
+all_df = pd.read_csv("Dashboard/all_data.csv")
 
 # Sidebar untuk memilih stasiun
 st.sidebar.title("Filter Data")
